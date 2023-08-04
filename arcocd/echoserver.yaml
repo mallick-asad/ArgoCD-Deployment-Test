@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: echo-ui
 spec:
-  replicas: 1
+  replicas: 2
   revisionHistoryLimit: 3
   selector:
     matchLabels:
@@ -14,7 +14,7 @@ spec:
         app: echo-ui
     spec:
       containers:
-      - image: ealen/echo-server:latest123
+      - image: ealen/echo-server:latest
         name: echo-ui
         ports:
         - containerPort: 80
