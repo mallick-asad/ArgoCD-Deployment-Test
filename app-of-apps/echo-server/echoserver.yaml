@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: echo-ui
+spec:
+  replicas: 2
+  revisionHistoryLimit: 3
+  selector:
+    matchLabels:
+      app: echo-ui
+  template:
+    metadata:
+      labels:
+        app: echo-ui
+    spec:
+      containers:
+      - image: ealen/echo-server:latest
+        name: echo-ui
+        ports:
+        - containerPort: 80
