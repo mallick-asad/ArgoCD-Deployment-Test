@@ -10,7 +10,7 @@ spec:
   source:
       repoURL: {{ .Values.spec.source.repoURL }}
       targetRevision: {{ .Values.spec.source.targetRevision }}
-      path: argocd/samples/app-of-apps/busybox
+      path: ArgoCD-Deployment-Test/app-of-apps/busybox
   destination:
       server: {{ .Values.spec.destination.server }}
       namespace: app-of-apps
