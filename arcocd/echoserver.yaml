@@ -14,7 +14,7 @@ spec:
         app: echo-ui
     spec:
       containers:
-      - image: ealen/sayali-server:0.7.0
+      - image: ealen/echo-server:latest
         name: echo-ui
         ports:
         - containerPort: 80
