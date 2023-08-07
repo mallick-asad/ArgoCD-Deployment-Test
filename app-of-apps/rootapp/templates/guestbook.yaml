@@ -1,0 +1,22 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: guestbook
+  namespace: prd-argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  project: default
+  source:
+      repoURL: {{ .Values.spec.source.repoURL }}
+      targetRevision: {{ .Values.spec.source.targetRevision }}
+      path: ArgoCD-Deployment-Test/app-of-apps/guestbook
+  destination:
+      server: {{ .Values.spec.destination.server }}
+      namespace: app-of-apps
+  syncPolicy:
+      automated:
+        prune: true # Automatic sync will not delete resources if false
+        selfHeal: true
+      syncOptions:
+        - CreateNamespace=true # If `app-of-apps` namespace does not exist
