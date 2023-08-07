@@ -8,7 +8,7 @@ Example configuration of eks-argocd to deploy the root app:
 module "eks-argocd" {
   source           = "https://modules.gdo.numerator.cloud/eks-argocd/0.X.X"
   name             = "myargocd"
-  namespace        = "argocd"
+  namespace        = "asad-argocd"
   create_namespace = true
   .
   .
@@ -17,7 +17,7 @@ module "eks-argocd" {
   argocd_apps_helm_values    = <<-EOF
     applications:
       - name: app-of-apps
-        namespace: argocd # NOTE: This must be the namespace where your eks-argocd installation lives!
+        namespace: asad-argocd # NOTE: This must be the namespace where your eks-argocd installation lives!
         project: default
         source:
           repoURL: https://github.com/mallick-asad/ArgoCD-Deployment-Test
