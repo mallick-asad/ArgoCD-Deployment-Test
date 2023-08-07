@@ -2,7 +2,7 @@ Example configuration of eks-argocd to deploy the root app:
 
 
 
-
+```
 module "eks-argocd" {
   source           = "https://modules.gdo.numerator.cloud/eks-argocd/0.X.X"
   name             = "myargocd"
@@ -28,3 +28,4 @@ module "eks-argocd" {
             prune: true # Automatic sync will not delete resources if false
             selfHeal: true
   EOF
+```
