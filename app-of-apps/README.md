@@ -1,3 +1,5 @@
+This example uses the app-of-apps pattern. Essentially, you define a root ArgoCD Application, which contains any number of Application manifests. If your deployment is successful, you will see the root Application in the ArgoCD UI, as well as the applications defined within the root Application:
+
 Example configuration of eks-argocd to deploy the root app:
 
 
