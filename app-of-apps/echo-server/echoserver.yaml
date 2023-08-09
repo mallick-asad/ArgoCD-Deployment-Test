@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: echo-ui
+  name: nginx-ui
 spec:
-  replicas: 3
+  replicas: 2
   revisionHistoryLimit: 3
   selector:
     matchLabels:
-      app: echo-ui
+      app: nginx-ui
   template:
     metadata:
       labels:
-        app: echo-ui
+        app: nginx-ui
     spec:
       containers:
-      - image: ealen/echo-server:latest
-        name: echo-ui
+      - image: nginx:latest
+        name: nginx-ui
         ports:
         - containerPort: 80
